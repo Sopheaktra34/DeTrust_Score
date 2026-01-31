@@ -145,7 +145,7 @@ streamlit run streamlit.py
 ## 8. Trust Score Interpretation
 
 The Trust Score ranges from **300 to 850** and is divided into categories for easier understanding:
-```
+
 | Score Range | Category       | Interpretation                  |
 |------------:|----------------|---------------------------------|
 | 800 - 850   | Excellent      | Very low risk, highly trusted   |
@@ -154,7 +154,6 @@ The Trust Score ranges from **300 to 850** and is divided into categories for ea
 | 580 - 669   | Fair           | Moderate risk, caution advised  |
 | 500 - 579   | Poor           | High risk, attention required   |
 | 300 - 499   | Very Poor      | Very high risk, not trusted     |
-```
 
 ## 9. Model Evaluation
 - Classification: Good vs Default
