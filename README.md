@@ -111,7 +111,7 @@ All Python dependencies are listed in `requirements.txt`.
 git clone https://github.com/Sopheaktra34/DeTrust_Score.git
 cd DeTrust_Score
 ```
-6.2 Python Environment Setup
+### 6.2 Python Environment Setup
 1. Create a virtual environment:
 ```bash
 python -m venv venv
