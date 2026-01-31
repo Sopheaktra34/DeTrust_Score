@@ -46,3 +46,19 @@ The system calculates trust using a hybrid approach:
 1. Clone the repository:
 ```bash
 git clone https://github.com/Sopheaktra34/DeTrust_Score.git
+```
+2. Navigate to the project directory:
+```bash
+cd DeTrust_Score
+```
+3. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+## ▶️ Run the App
+To start the Streamlit app:
+```bash
+streamlit run streamlit.py
+```
+
