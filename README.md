@@ -109,22 +109,30 @@ All Python dependencies are listed in `requirements.txt`.
 ```bash
 git clone https://github.com/Sopheaktra34/DeTrust_Score.git
 cd DeTrust_Score
+```
 6.2 Python Environment Setup
 Create a virtual environment:
-
+```bash
 python -m venv venv
 Activate the virtual environment:
-
+```
 # Windows
+```bash
 venv\Scripts\activate
-
+```
 # Linux/Mac
+```bas
 source venv/bin/activate
+```
 Install dependencies:
-
+```bash 
 pip install -r requirements.txt
+```
+
 7. Running the Streamlit App
+```bash
 streamlit run streamlit.py
+```
 Fill in Account Info, Behavior Info, and Network Info
 
 Click Predict Trust Score
@@ -160,26 +168,3 @@ Weighted scoring for stability, network, and behavior
 
 10. Conclusion
 This project demonstrates a reproducible, interpretable approach for user trust scoring using machine learning and rule-based scoring. It allows for detailed insights into why a user is classified as Good or Default Risk, providing actionable recommendations for improvement.
-
-🗂️ Download Link
-You can download the trained models, dataset, and example outputs here:
-
-🔗 GitHub Repository
-
-11. Screenshots / Demo
-Add screenshots or GIFs of your Streamlit app here (optional but recommended).
-
-Main dashboard view
-
-Component score breakdown
-
-Feature contribution (+/- points)
-
-Prediction and recommendations
-
-
----
-
-If you want, I can **also generate a version that already includes badges** for Python version, Streamlit, and license — this makes your GitHub README look super professional.  
-
-Do you want me to do that?
