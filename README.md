@@ -72,18 +72,19 @@ DeTrust_Score/
 ├─ data/ # Dataset files
 │ └─ detrust_dataset.xlsx
 │
-├─ model/ # Pre-trained ML models
+├─ model/ ML models
 │ ├─ xgb_model.json
 │ └─ rf_model.pkl
 │
-├─ notebooks/ # Jupyter notebooks for experiments
-│ ├─ Phase1.ipynb
-│ └─ Phase2.ipynb
-│
+├─ Phase1.ipynb # Generate and EDA on data
+├─ Phase2.ipynb # Rule base Engine and api
+├─ Phase3.ipynb # Training ML model
+├─ README.md # Project documentation
+├─ api.py
+├─ scoring.py   # scoring function
 ├─ streamlit.py # Main Streamlit app
 ├─ requirements.txt # Python dependencies
-├─ README.md # Project documentation
-└─ utils.py # Helper functions for scoring
+
 ```
 
 ---
@@ -111,20 +112,20 @@ git clone https://github.com/Sopheaktra34/DeTrust_Score.git
 cd DeTrust_Score
 ```
 6.2 Python Environment Setup
-Create a virtual environment:
+1. Create a virtual environment:
 ```bash
 python -m venv venv
-Activate the virtual environment:
 ```
-Windows
-```bash
+2. Activate the virtual environment:
+```
+# Windows
 venv\Scripts\activate
-```
-Linux/Mac
+
+# Linux/Mac
 ```bas
 source venv/bin/activate
 ```
-Install dependencies:
+3. Install dependencies:
 ```bash 
 pip install -r requirements.txt
 ```
@@ -133,38 +134,33 @@ pip install -r requirements.txt
 ```bash
 streamlit run streamlit.py
 ```
-Fill in Account Info, Behavior Info, and Network Info
+1. Fill in Account Info, Behavior Info, and Network Info
+2. Click Predict Trust Score
+3. View:
+- Overall Trust Score
+- Component Scores
+- Feature Contribution (+/- points)
+- Prediction Probability (Good/Default)
 
-Click Predict Trust Score
+## 8. Trust Score Interpretation
 
-View:
+The Trust Score ranges from **300 to 850** and is divided into categories for easier understanding:
+```
+| Score Range | Category       | Interpretation                  |
+|------------:|----------------|---------------------------------|
+| 800 - 850   | Excellent      | Very low risk, highly trusted   |
+| 740 - 799   | Very Good      | Low risk, mostly trusted        |
+| 670 - 739   | Good           | Acceptable trust level          |
+| 580 - 669   | Fair           | Moderate risk, caution advised  |
+| 500 - 579   | Poor           | High risk, attention required   |
+| 300 - 499   | Very Poor      | Very high risk, not trusted     |
+```
 
-Overall Trust Score
+## 9. Model Evaluation
+- Classification: Good vs Default
+- Probability prediction for user trust
+- Transparency via feature contributions
+- Weighted scoring for stability, network, and behavior
 
-Component Scores
-
-Feature Contribution (+/- points)
-
-Prediction Probability (Good/Default)
-
-Recommendations
-
-8. Trust Score Interpretation
-Score	Category
-800–850	Excellent
-740–799	Very Good
-670–739	Good
-580–669	Fair
-500–579	Poor
-<500	Very Poor
-9. Model Evaluation
-Classification: Good vs Default
-
-Probability prediction for user trust
-
-Transparency via feature contributions
-
-Weighted scoring for stability, network, and behavior
-
-10. Conclusion
+## 10. Conclusion
 This project demonstrates a reproducible, interpretable approach for user trust scoring using machine learning and rule-based scoring. It allows for detailed insights into why a user is classified as Good or Default Risk, providing actionable recommendations for improvement.
