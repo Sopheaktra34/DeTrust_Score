@@ -61,6 +61,7 @@ To start the Streamlit app:
 ```bash
 streamlit run streamlit.py
 ```
+---
 
 ## 📊 Usage
 The web interface asks for the following input categories:
@@ -76,7 +77,7 @@ The web interface asks for the following input categories:
 - Login patterns
 - Toxic / spam behavior
 
-🌐 Network Info
+🌐 3. Network Info
 - Number of connections with other users
 
 After entering these values, click Predict Trust Score to view:
@@ -85,3 +86,25 @@ After entering these values, click Predict Trust Score to view:
 - Component scores
 - Feature contribution details
 
+---
+
+🧠 How Trust Score Is Calculated (Trust Score combines) :
+- Machine learning classification
+- Rule‑based scoring of Stability, Network, and Behavior
+- Weighted overall score on a 300–850 scale
+Each component’s contribution is shown to explain why the score increased or decreased.
+
+---
+
+DeTrust_Score/
+├── data/                      # Datasets
+├── model/                     # Saved ML models
+├── streamlit.py               # Main app
+├── scoring.py                 # Feature scoring logic
+├── requirements.txt           # Python dependencies
+├── Phase1.ipynb               # Generate Data and EDA
+├── Phase2.ipynb               # Defind Scoring Function
+├── Phase3.ipynb               # Train model (XGB and RF)
+└── README.md                  # Project documentation (this file)
+└── 
+└── api.py                     # Testing API
