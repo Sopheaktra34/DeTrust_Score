@@ -62,3 +62,26 @@ To start the Streamlit app:
 streamlit run streamlit.py
 ```
 
+## 📊 Usage
+The web interface asks for the following input categories:
+
+🏦 1. Account Info
+- Account age (days)
+- Profile completeness percentage
+- Email verification status
+
+🧠 2. Behavioral Info
+- Average response time
+- Message count
+- Login patterns
+- Toxic / spam behavior
+
+🌐 Network Info
+- Number of connections with other users
+
+After entering these values, click Predict Trust Score to view:
+- Trust category (Good / Default)
+- Prediction probabilities
+- Component scores
+- Feature contribution details
+
