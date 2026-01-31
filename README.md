@@ -46,17 +46,24 @@ The system calculates three main scores:
 
 - Generated synthetic dataset for demonstration
 - Features per user:
-
-account_age_days
-complete_profile
-verified_email
-avg_response_time
-messages_per_day
-consistent_logins
-random_logins
-connects_with_other_users
-spammy_chat_behavior
-toxic_message_count_prior
+ 1. user_id
+ 2. device_id
+ 3. ip_address
+ 4. account_created_at
+ 5. account_age_days
+ 6. login_timestamp
+ 7. avg_response_time
+ 8. consistent_logins
+ 9. random_logins
+10. changing_ip_addresses
+11. verified_email
+12. complete_profile
+13. incomplete_profile
+14. messages_per_day
+15. toxic_message_count_prior
+16. spammy_chat_behavior
+17. connects_with_other_users
+18. target
 
 
 - Target: `1 = Good User`, `0 = Default Risk`
