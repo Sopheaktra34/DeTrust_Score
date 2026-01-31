@@ -66,7 +66,7 @@ Dataset path: `data/detrust_dataset.xlsx` (or generated in the notebook)
 ---
 
 ## 4. Project Structure
-
+```
 DeTrust_Score/
 │
 ├─ data/ # Dataset files
@@ -84,7 +84,7 @@ DeTrust_Score/
 ├─ requirements.txt # Python dependencies
 ├─ README.md # Project documentation
 └─ utils.py # Helper functions for scoring
-
+```
 
 ---
 
@@ -116,11 +116,11 @@ Create a virtual environment:
 python -m venv venv
 Activate the virtual environment:
 ```
-# Windows
+Windows
 ```bash
 venv\Scripts\activate
 ```
-# Linux/Mac
+Linux/Mac
 ```bas
 source venv/bin/activate
 ```
@@ -129,7 +129,7 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 
-7. Running the Streamlit App
+## 7. Running the Streamlit App
 ```bash
 streamlit run streamlit.py
 ```
