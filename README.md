@@ -77,13 +77,20 @@ DeTrust_Score/
 │ └─ rf_model.pkl
 │
 ├─ Phase1.ipynb # Generate and EDA on data
+|
 ├─ Phase2.ipynb # Rule base Engine and api
+|
 ├─ Phase3.ipynb # Training ML model
+|
 ├─ README.md # Project documentation
+|
 ├─ api.py
-├─ scoring.py   # scoring function
-├─ streamlit.py # Main Streamlit app
+|
 ├─ requirements.txt # Python dependencies
+|
+├─ scoring.py   # scoring function
+|
+├─ streamlit.py # Main Streamlit app
 
 ```
 
