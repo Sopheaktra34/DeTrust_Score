@@ -159,10 +159,6 @@ streamlit run streamlit.py
 
 The Trust Score ranges from **300 to 850** and is divided into categories for easier understanding:
 
-## 8. Trust Score Interpretation
-
-The final Trust Score ranges from 0–850 and is interpreted as follows:
-
 | Trust Score| Category    |
 |------------|-------------|
 | 800 – 850  | Excellent   |
