@@ -21,18 +21,19 @@ The project includes:
 
 The system calculates three main scores:
 
-1. **Stability Score (0–100)**  
+1. **Stability Score**  
    - Account Age  
    - Profile Completeness  
    - Verified Email  
    - Login Consistency  
 
-2. **Network Score (0–100)**  
+2. **Network Score**  
    - Connections with other users  
    - Account Maturity  
-   - Social Influence (Pagerank optional)  
+   - Social Influence
+   - Pagerank Influence (optional)  
 
-3. **Behavior Score (0–100)**  
+3. **Behavior Score**  
    - Average Response Time  
    - Daily Message Activity  
    - Toxicity  
