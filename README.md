@@ -130,10 +130,10 @@ cd DeTrust_Score
 python -m venv venv
 ```
 2. Activate the virtual environment:
-```
+```bash
 # Windows
 venv\Scripts\activate
-
+```
 # Linux/Mac
 ```bas
 source venv/bin/activate
