@@ -3,25 +3,10 @@
 Please read till the end to see links to the dataset and source code.
 
 ---
-
-## Table of Contents
-- [## 1. Project Overview](#ProjectOverview)
-- [Features](#features)
-- [Score Components](#score-components)
-- [Dataset](#dataset)
-- [Project Structure](#project-structure)
-- [Requirements](#requirements)
-- [Installation](#installation)
-- [Usage](#usage)
-- [API Endpoints](#api-endpoints)
-- [Model Evaluation](#model-evaluation)
-- [Contributing](#contributing)
-- [License](#license)
-
   
 ## 1. Project Overview
 
-This project implements a **DeTrust Score system** to predict user trustworthiness using a combination of **machine learning** and **rule-based scoring**. The system classifies users as **Good User ✅** or **Default Risk ❌** and provides a detailed breakdown of their **stability, network, and behavior scores**.
+This project implements a **DeTrust Score system** to predict user trustworthiness using a combination of **machine learning** (XGBoost and Random Forest) with **rule-based scoring** to provide transparent and interpretable trust scores for users. The system classifies users as **Good User** or **Default Risk** and provides a detailed breakdown of their **stability, network, and behavior scores**, producing a final score ranging from 300 to 850.
 
 The project includes:
 
@@ -32,27 +17,36 @@ The project includes:
 
 ---
 
+## Features
+
+- **Dual Scoring Approach**: Machine learning predictions combined with rule-based calculations for transparency
+- **Interactive Web App**: Streamlit-based interface for real-time predictions
+- **REST API**: FastAPI endpoints for programmatic access
+- **Feature Contribution Analysis**: Detailed breakdown of score components and their impacts
+- **Model Comparison**: Choose between XGBoost and Random Forest models
+- **Comprehensive Evaluation**: Classification metrics and probability outputs
+
 ## 2. Score Components
 
 The system calculates three main scores:
 
-1. **Stability Score**  
-   - Account Age  
-   - Profile Completeness  
-   - Verified Email  
-   - Login Consistency  
+1. **Stability Score (0-100)** - Account reliability and consistency
+   - Account age
+   - Profile completeness
+   - Email verification
+   - Login consistency
 
-2. **Network Score**  
-   - Connections with other users  
-   - Account Maturity  
-   - Social Influence
+2. **Network Score (0-100)** - Social connections and influence
+   - User connections
+   - Account maturity
+   - Social influence metrics
    - Pagerank Influence (optional)  
 
-3. **Behavior Score**  
-   - Average Response Time  
-   - Daily Message Activity  
-   - Toxicity  
-   - Spammy Behavior  
+3. **Behavior Score (0-100)** - Activity patterns and quality
+   - Response times
+   - Message activity
+   - Toxicity levels
+   - Spam behavior
 
 **Total DeTrust Score:** Weighted sum of the three components scaled to **300–850**.
 
@@ -60,30 +54,25 @@ The system calculates three main scores:
 
 ## 3. Dataset Description
 
-- Generated synthetic dataset for demonstration
-- Features per user:
-   - user_id
-   - device_id
-   - ip_address
-   - account_created_at
-   - account_age_days
-   - login_timestamp
-   - avg_response_time
-   - consistent_logins
-   - random_logins
-   - changing_ip_addresses
-   - verified_email
-   - complete_profile
-   - incomplete_profile
-   - messages_per_day
-   - toxic_message_count_prior
-   - spammy_chat_behavior
-   - connects_with_other_users
-   - target
-     
-- Target: `1 = Good User`, `0 = Default Risk`
+The project uses a synthetic dataset (`data/detrust_dataset.xlsx`) with the following features:
 
-Dataset path: `data/detrust_dataset.xlsx` (or generated in the notebook)
+- `user_id`: Unique user identifier
+- `device_id`: Device information
+- `ip_address`: IP address data
+- `account_created_at`: Account creation timestamp
+- `account_age_days`: Account age in days
+- `login_timestamp`: Last login time
+- `avg_response_time`: Average response time
+- `consistent_logins`: Number of consistent logins
+- `random_logins`: Number of random/inconsistent logins
+- `changing_ip_addresses`: IP address changes
+- `verified_email`: Email verification status
+- `complete_profile`: Profile completeness percentage
+- `messages_per_day`: Daily message count
+- `toxic_message_count_prior`: Prior toxic messages
+- `spammy_chat_behavior`: Spam behavior indicators
+- `connects_with_other_users`: Network connections
+- `target`: Binary target (1 = Good User, 0 = Default Risk)
 
 ---
 
@@ -91,44 +80,44 @@ Dataset path: `data/detrust_dataset.xlsx` (or generated in the notebook)
 ```
 DeTrust_Score/
 │
-├─ data/ # Dataset files
-│ └─ detrust_dataset.xlsx
+├── data/
+│ └── detrust_dataset.xlsx # Main dataset
 │
-├─ model/ ML models
-│ ├─ xgb_model.json
-│ └─ rf_model.pkl
+├── model/
+│ ├── xgb_model.json # Trained XGBoost model
+│ └── rf_model.pkl # Trained Random Forest model
 │
-├─ Phase1.ipynb # Generate and EDA on data
-|
-├─ Phase2.ipynb # Rule base Engine and api
-|
-├─ Phase3.ipynb # Training ML model
-|
-├─ README.md # Project documentation
-|
-├─ api.py
-|
-├─ requirements.txt # Python dependencies
-|
-├─ scoring.py   # scoring function
-|
-├─ streamlit.py # Main Streamlit app
+├── Phase1.ipynb # Data generation and EDA
+├── Phase2.ipynb # Rule-based engine and API development
+├── Phase3.ipynb # ML model training and evaluation
+│
+├── api.py # FastAPI application
+├── scoring.py # Scoring functions and utilities
+├── streamlit.py # Streamlit web application
+│
+├── requirements.txt # Python dependencies
+├── README.md # Project documentation
+│
+└── pycache/ # Python cache files
 
 ```
 
 ---
 
-## 5. Software Requirements
+## 5. Requirements
 
-- Python 3.8+  
-- Streamlit  
-- XGBoost  
-- Scikit-learn  
-- NumPy  
-- Joblib  
-- NetworkX (optional for pagerank)  
-
-All Python dependencies are listed in `requirements.txt`.
+- Python 3.8+
+- Libraries listed in `requirements.txt`:
+  - streamlit==1.29.0
+  - xgboost==1.7.6
+  - scikit-learn==1.3.2
+  - pandas==2.1.1
+  - numpy==1.27.4
+  - matplotlib==3.8.0
+  - seaborn==0.12.3
+  - networkx==3.1
+  - joblib==1.3.2
+  - fastapi (for API)
 
 ---
 
