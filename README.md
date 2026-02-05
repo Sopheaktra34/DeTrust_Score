@@ -3,7 +3,20 @@
 Please read till the end to see links to the dataset and source code.
 
 ---
-
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Score Components](#score-components)
+- [Dataset](#dataset)
+- [Project Structure](#project-structure)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Usage](#usage)
+- [API Endpoints](#api-endpoints)
+- [Model Evaluation](#model-evaluation)
+- [Contributing](#contributing)
+- [License](#license)
+- 
 ## 1. Project Overview
 
 This project implements a **DeTrust Score system** to predict user trustworthiness using a combination of **machine learning** and **rule-based scoring**. The system classifies users as **Good User ✅** or **Default Risk ❌** and provides a detailed breakdown of their **stability, network, and behavior scores**.
