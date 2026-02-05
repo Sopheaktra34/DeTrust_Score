@@ -5,7 +5,7 @@ Please read till the end to see links to the dataset and source code.
 ---
 
 ## Table of Contents
-- [Project Overview](#ProjectOverview)
+- [## 1. Project Overview](#ProjectOverview)
 - [Features](#features)
 - [Score Components](#score-components)
 - [Dataset](#dataset)
