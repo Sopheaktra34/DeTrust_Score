@@ -139,16 +139,34 @@ python -m venv venv
 # Windows
 venv\Scripts\activate
 ```
-# Linux/Mac
 ```bas
+# Linux/Mac
 source venv/bin/activate
 ```
 3. Install dependencies:
 ```bash 
 pip install -r requirements.txt
 ```
+## 7. Running the API
+```bash
+uvicorn api:app --reload
+```
+The API will be available at http://localhost:8000//docs
 
-## 7. Running the Streamlit App
+API Endpoints
+- GET /: Health check
+- GET /score/{user_id}: Get precomputed score for a user
+- GET /score/live/{user_id}: Calculate live score for a user
+- Example API response:
+```bash
+{
+  "user_id": 123,
+  "credit_score": 750,
+  "category": "Very Good"
+}
+```
+
+## 8. Running the Streamlit App
 ```bash
 streamlit run streamlit.py
 ```
@@ -160,13 +178,13 @@ streamlit run streamlit.py
 - Feature Contribution (+/- points)
 - Prediction Probability (Good/Default)
 
-## 8. Trust Score Interpretation
+## 9. Trust Score Interpretation
 
 The Trust Score ranges from **300 to 850** and is divided into categories for easier understanding:
 
-| Trust Score| Category    |
-|------------|-------------|
-| 800 – 850  | Excellent   |
+| Trust Score| Category    |             |
+|------------|-------------|-------------|
+| 800 – 850  | Excellent   |             |
 | 740 – 799  | Very Good   |
 | 670 – 739  | Good        |
 | 580 – 669  | Fair        |
@@ -178,11 +196,11 @@ The Trust Score ranges from **300 to 850** and is divided into categories for ea
 > - Scores are calculated from weighted contributions of **Stability**, **Network**, and **Behavior**.
 
 
-## 9. Model Evaluation
+## 10. Model Evaluation
 - Classification: Good vs Default
 - Probability prediction for user trust
 - Transparency via feature contributions
 - Weighted scoring for stability, network, and behavior
 
-## 10. Conclusion
+## 11. Conclusion
 This project demonstrates a reproducible, interpretable approach for user trust scoring using machine learning and rule-based scoring. It allows for detailed insights into why a user is classified as Good or Default Risk, providing actionable recommendations for improvement.
